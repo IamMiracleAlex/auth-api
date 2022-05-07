@@ -134,7 +134,6 @@ AUTH_USER_MODEL = 'users.User'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.BasicAuthentication',
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
@@ -157,13 +156,13 @@ REST_FRAMEWORK = {
 
 
 # internal documentation settings
-# SWAGGER_SETTINGS = {
-#    'SECURITY_DEFINITIONS': {
-#       'Token': {
-#             'type': 'apiKey',
-#             'name': 'Authorization',
-#             'in': 'header'
-#       }
-#    },
-#    'USE_SESSION_AUTH': False
-# }
+SWAGGER_SETTINGS = {
+   'SECURITY_DEFINITIONS': {
+      'Token': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+      }
+   },
+   'USE_SESSION_AUTH': False
+}
