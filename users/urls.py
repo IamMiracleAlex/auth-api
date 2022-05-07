@@ -12,6 +12,5 @@ urlpatterns = [
     path('token/verify/', verify_jwt_token, name="token_verify"),
     path('login/', views.LoginView.as_view()),
     path('signup/', views.SignUpView.as_view()),
-    path('logout/', views.LogoutView.as_view()),
     path('all/', views.ListUserView.as_view()),
 ]

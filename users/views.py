@@ -17,6 +17,7 @@ from users.models import User
 def index(request):
 	return render(request, 'index.html')
 
+
 class LoginView(APIView):
     '''
     Login users
@@ -47,20 +48,6 @@ class LoginView(APIView):
 
         return Response(data={'detail':'Login successful', 'data': data})
 
-
-class LogoutView(APIView):
-    '''
-    Log out users
-    POST /users/logout/
-    '''
-    permission_classes = [IsAuthenticated]
-
-    @swagger_auto_schema(responses={204: None} )
-    def post(self, request, format=None):
-        logout(request)
-      
-        return Response(status=status.HTTP_204_NO_CONTENT)
-        
 
 class SignUpView(APIView):
     '''
