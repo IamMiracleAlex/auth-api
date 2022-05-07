@@ -84,7 +84,10 @@ class SignUpView(APIView):
 
 
 class ListUserView(generics.ListAPIView):
-	'''Retrieve all users'''
+	'''
+	Retrieve all users
+	POST /users/all/
+	'''
 
 	queryset = User.objects.all()
 	serializer_class = UserSerializer
