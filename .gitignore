@@ -1,0 +1,19 @@
+# Distribution / packaging
+.Python
+venv/
+coresightEnv/
+env/
+.idea/
+# Project asset folders
+media/
+
+# Editor directories and files
+.idea
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+.DS_Store
+.vscode
+.DS_Store
+static/
