@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'rest_framework',
+    'rest_framework_jwt',
+    'rest_framework_jwt.blacklist',
     'drf_yasg',
     'users',
 ]
@@ -150,4 +152,18 @@ REST_FRAMEWORK = {
         'user': '5000/day'
     },
 
+}
+
+
+
+# internal documentation settings
+SWAGGER_SETTINGS = {
+   'SECURITY_DEFINITIONS': {
+      'Token': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+      }
+   },
+   'USE_SESSION_AUTH': False
 }
