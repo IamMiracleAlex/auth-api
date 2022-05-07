@@ -1,4 +1,5 @@
 from django.contrib.auth import authenticate, login, logout
+from django.shortcuts import render
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -8,8 +9,11 @@ from drf_yasg.utils import swagger_auto_schema
 
 from users.utils import jwt_token
 from users.serializers import UserLoginSerializer, UserSerializer 
-from users.models import  User
 
+
+
+def index(request):
+	return render(request, 'index.html')
 
 class LoginView(APIView):
     '''
